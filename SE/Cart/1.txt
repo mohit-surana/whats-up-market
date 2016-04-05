@@ -1,0 +1,8 @@
+<form class="navbar-form navbar-left" role="search">
+        <div class="form-group" style="display:inline">
+		
+          <input type="text" class="form-control input-input-xxlarge" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-inverse">Submit</button>
+      </form> 
+	  </div>

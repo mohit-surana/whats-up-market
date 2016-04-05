@@ -1,0 +1,459 @@
+.uiv2-flat-page-content p {
+    float: left;
+    font-size: 13px;
+    color: #808285;
+    font-family: Lato, sans-serif;
+    width: 470px;
+    line-height: 20px;
+}
+
+.uiv2-flat-page-content p.full-width {
+    width: auto;
+}
+
+.uiv2-padding-bottom-20 {
+    padding-bottom: 20px;
+}
+
+.uiv2-flat-page-content p label, .uiv2-flat-page-content p a, .uiv2-privacy-policy p label {
+    font-size: 23px;
+    color: #58595B;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    padding-bottom: 15px;
+    display: block;
+}
+
+.uiv2-happy-shop {
+    color: #6D6E71;
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    font-weight: 400;
+    width: 100%;
+    display: block;
+    margin: 22px 0 0;
+}
+
+.uiv2-mar-t-20N {
+    margin-top: -20px;
+}
+
+.uiv2-clear-b {
+    margin: 0 auto;
+    clear: both;
+}
+
+.uiv2-about-guaranteed_block {
+    overflow: hidden;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f4f4f4));
+    background: -webkit-linear-gradient(top, #ffffff, #f4f4f4);
+    background: -moz-linear-gradient(top, #ffffff, #f4f4f4);
+    background: -ms-linear-gradient(top, #ffffff, #f4f4f4);
+    background: -o-linear-gradient(top, #ffffff, #f4f4f4);
+    background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+    border: #dddddd 1px solid;
+    padding: 10px 0 10px 13px;
+    margin: 20px 0 31px;
+    height: 135px;
+}
+
+.uiv2-about-guaranteed_block label {
+    color: #00A79D;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 9px;
+}
+
+.uiv2-about-guaranteed_block a {
+    padding: 0 !important;
+    color: #3E3E3C;
+    font: 300 12px/31px 'Roboto Slab', serif;
+}
+
+.uiv2-about-guaranteed_block .ontime, .uiv2-about-guaranteed_block .quality, .uiv2-about-guaranteed_block .yourorder {
+    float: left;
+    margin-top: 20px;
+    color: #58595B;
+    text-transform: uppercase;
+}
+
+.uiv2-about-guaranteed_block .ontime {
+    width: 218px;
+}
+
+.uiv2-about-guaranteed_block .ontime img {
+    float: left;
+    margin-right: 6px;
+    padding: 3px;
+}
+
+.uiv2-about-guaranteed_block .quality img {
+    float: left;
+    margin-right: 10px;
+    padding: 3px;
+}
+
+.uiv2-about-guaranteed_block .quality, .uiv2-about-guaranteed_block .yourorder {
+    width: 218px;
+    margin: 20px 0 0 30px;
+}
+
+.uiv2-about-guaranteed_block .yourorder img {
+    float: left;
+    margin-right: 10px;
+    padding: 3px;
+}
+
+.uiv2-go-top {
+    font-family: Lato, sans-serif !important;
+    color: #666 !important;
+    font-size: 10px !important;
+    padding: 0 !important;
+    float: right;
+    line-height: normal !important;
+    font-weight: 600;
+    margin-top: 22px;
+}
+
+.uiv2-about-highlight {
+    display: inline-block;
+    width: 100%;
+    margin: 14px 0 0;
+}
+
+.uiv2-about-highlight li {
+    float: none;
+    display: inline-block;
+    margin-bottom: 7px;
+    padding-bottom: 8px;
+    width: 100%;
+}
+
+.uiv2-about-highlight li span {
+    display: inline-block;
+    width: 100%;
+    background: #d9d9d9;
+    height: 1px;
+    border-top: #f2f2f2 1px solid;
+    margin: 0 0 18px;
+}
+
+.uiv2-div50 {
+    width: 50%;
+    float: left;
+}
+
+.uiv2-about-highlight li div.uiv2-div50 p, .uiv2-about-highlight li div.uiv2-div45 p {
+    font-family: Lato, sans-serif;
+    color: #59595b;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 21px;
+    display: inline-block;
+    width: 100%;
+}
+
+.uiv2-about-highlight li div.uiv2-div50 p img, .uiv2-about-highlight li div.uiv2-div45 p img {
+    float: left;
+    margin-right: 9px;
+}
+
+.uiv2-div45 {
+    width: 45%;
+    float: left;
+}
+
+.uiv2-pad-l-35 {
+    padding-left: 35px;
+}
+
+ul.uiv2-time-slots {
+    background: #ededed;
+    background: -moz-linear-gradient(top, #ededed 0%, #ffffff 31%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ededed), color-stop(31%, #ffffff), color-stop(100%, #ffffff));
+    background: -webkit-linear-gradient(top, #ededed 0%, #ffffff 31%, #ffffff 100%);
+    background: -o-linear-gradient(top, #ededed 0%, #ffffff 31%, #ffffff 100%);
+    background: -ms-linear-gradient(top, #ededed 0%, #ffffff 31%, #ffffff 100%);
+    background: linear-gradient(to bottom, #ededed 0%, #ffffff 31%, #ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff', GradientType=0);
+    border: #e0e0e0 1px solid;
+    width: 208px;
+    margin: 17px 0 0 34px;
+    font-family: Lato, sans-serif;
+    text-align: center;
+    border-bottom: 0;
+}
+
+ul.uiv2-time-slots span {
+    border-bottom: #e0e0e0 1px solid;
+    width: 100%;
+    padding: 16px 0 13px !important;
+    margin: 0 !important;
+    color: #414143;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    background: none;
+    height: auto;
+    border-top: none;
+}
+
+ul.uiv2-time-slots li {
+    border-bottom: #e0e0e0 1px solid;
+    width: 100%;
+    padding: 9px 0 8px !important;
+    margin: 0 !important;
+    color: #818286;
+    font-size: 14px;
+}
+
+.uiv2-slot-timing {
+    font-size: 10px !important;
+    color: #818286 !important;
+    text-align: center;
+    width: 72% !important;
+    font-weight: 400 !important;
+}
+
+ul.uiv2-suit-pay {
+    border: #e0e0e0 1px solid;
+    width: 302px;
+    margin: 17px 0 0 34px;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 70%, #ededed 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(70%, #ffffff), color-stop(100%, #ededed));
+    background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 70%, #ededed 100%);
+    background: -o-linear-gradient(top, #ffffff 0%, #ffffff 70%, #ededed 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #ffffff 70%, #ededed 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 70%, #ededed 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);
+    font-family: Lato, sans-serif;
+    color: #6e6e70;
+}
+
+ul.uiv2-suit-pay li {
+    padding: 9px 0 !important;
+    margin: 0 0 0 12px !important;
+    border-bottom: #e0e0e0 1px solid;
+    width: 93%;
+}
+
+ul.uiv2-suit-pay li.last {
+    border: 0;
+}
+
+.uiv2-width-auto {
+    width: auto !important;
+}
+
+.uiv2-terms-title {
+    font: 400 20px/20px 'Roboto Slab', serif;
+    float: left;
+    width: 100%;
+    color: #666;
+    padding: 0 0 10px;
+}
+
+.uiv2-terms-content {
+    font: 400 15px/20px 'lato', serif;
+    float: left;
+    width: 100%;
+    color: #333;
+    margin: 10px 0 0 0;
+}
+
+.uiv2-adjust-terms {
+    width: 555px;
+    float: left;
+}
+
+.uiv2-adjust-terms-img {
+    width: 200px;
+    float: right;
+    margin: -254px 0 0 0;
+}
+
+.uiv2-terms-slot {
+    margin: 20px 0 0 0;
+    padding: 0 0 20px 0;
+    float: left;
+    border-bottom: solid 1px #ccc;
+}
+
+.uiv2-terms-content-2 {
+    font: 400 15px/20px 'lato', serif;
+    float: left;
+    color: #333;
+    margin: 10px 0 0 0;
+    width: 679px;
+    text-align: justify;
+}
+
+.uiv2-left-sec-top-faq {
+    width: 500px;
+    font: 400 15px/20px 'lato', serif;
+    color: #666;
+    margin: 40px 0 0 0;
+}
+
+.uiv2-title-faq, .uiv2-question-faq, .uiv2-answer-faq {
+    width: 100%;
+    float: left;
+}
+
+.uiv2-title-faq {
+    font: 400 20px/20px 'Roboto Slab', serif;
+    color: #009966;
+    margin: 20px 0 20px 0;
+}
+
+.uiv2-faq-sec-type {
+    border-bottom: solid 1px #ccc;
+    width: 100%;
+    float: left;
+    margin: 0 0 10px 0;
+    padding: 0 0 10px 0;
+}
+
+.uiv2-question-faq {
+    font: 400 15px/20px 'Roboto Slab', serif;
+    color: #666;
+    cursor: pointer;
+}
+
+.uiv2-answer-faq {
+    font: 400 12px/14px 'lato', serif;
+    color: #333;
+    display: none;
+}
+
+.uiv2-close-txt {
+    float: right;
+    color: #009966;
+    cursor: pointer;
+    font: 400 15px/15px 'Roboto Slab', serif;
+    width: 100%;
+    text-align: right;
+}
+
+.uiv2-right {
+    float: right !important;
+}
+
+.uiv2-contact-click-hear {
+    font: 300 13px/13px 'lato', serif;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 10px 0;
+}
+
+.uiv2-contact-click-hear a {
+    padding: 0;
+    color: #1C75BC;
+    margin: 0 0 0 10px;
+    float: left;
+}
+
+.uiv2-contact-address-sec {
+    margin-top: 20px;
+}
+
+.uiv2-contact-address-left-sec {
+    width: 300px;
+}
+
+.uiv2-contact-address-left-sec ul li {
+    width: 100%;
+    font: 400 13px/18px 'lato', serif;
+    color: #333;
+}
+
+.uiv2-contact-address-left-sec ul li.office {
+    width: 100%;
+    font: 400 20px/20px 'Roboto Slab', serif;
+    margin: 0 0 20px 0;
+}
+
+.uiv2-contact-address-left-sec ul li.city {
+    width: 100%;
+    font: 400 15px/15px 'lato', serif;
+    margin: 0 0 10px 0;
+}
+
+.uiv2-email-ids, .uiv2-email-ids a {
+    padding: 0;
+    color: #333;
+    margin: 0 0 0 0;
+    float: left;
+    font: 400 15px/15px 'lato', serif;
+}
+
+.uiv2-contact-click-hear a {
+    padding: 0;
+    color: #1C75BC !important;
+    margin: 0 0 0 10px;
+    float: left;
+    font-size: 13px;
+}
+
+.uiv2-contact-click-hear a:hover, .uiv2-email-ids a:hover {
+    color: #096 !important;
+}
+
+.uiv2-email-ids a {
+    color: #1C75BC;
+    margin: 0 0 0 10px;
+}
+
+.uiv2-social-media a {
+    float: left;
+    margin: 0 5px;
+}
+
+.breadCrumbs {
+    padding: 3px 20px 8px;
+    clear: both;
+    color: #808285;
+    font: 400 10px/13px 'Lato', sans-serif;
+    text-transform: uppercase;
+}
+
+.breadCrumbs a, .breadCrumbs a:visited {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    color: #808285;
+}
+
+#containerMainMobileAppHelp h1, #containerMainMobileAppHelp h2, #containerMainMobileAppHelp h3, #containerMainMobileAppHelp ol li {
+    color: #6f6f71;
+    font: 300 25px 'Roboto Slab', serif;
+}
+
+#containerMainMobileAppHelp h2, #containerMainMobileAppHelp ol li {
+    font-size: 22px;
+}
+
+#containerMainMobileAppHelp ol li:last-child {
+    border-bottom: 0;
+    padding-bottom: 5px;
+}
+
+#containerMainMobileAppHelp h3 {
+    font-size: 20px;
+}
+
+.breadCrumbs a:hover {
+    color: #096;
+}
+
+#containerMainMobileAppHelp p {
+    font: 400 13px/20px 'Lato', sans-serif;
+    color: #808285;
+}
