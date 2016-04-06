@@ -8,6 +8,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
+<?php
+	$servername = "localhost";
+	$username = "root";
+	$password = '';
+	$db = "supermarket";
+	
+	$conn = new mysqli($servername, $username, $password, $db);
+	
+	if($conn->connect_error)
+		die("Connection Failed:" . $conn->connect_error);
+	
+	//echo "connected sucessfully";
+	//$conn->close();
+?>
 <body>
 	<nav class="navbar navbar-default" >
   <div class="container-fluid" style="background-color:#030303;height:100px">
@@ -35,28 +49,46 @@
     <a href="#" class="list-group-item"><h4>Analysis</h4></a>
   </div>
       </div>
-     <div class="col-md-9 container">
-        <ul class="nav nav-tabs nav-justified" style="margin-left:-105px;margin-top:-21px">
-        <li><a href="Manager_Customer_View.php">View</a></li>
+      <div class="col-md-9 container">
+        <ul class="nav nav-tabs nav-justified" style="margin-left:-105px;margin-top:-21px;">
+        <li class="active" ><a href="Manager_Customer_View.php" style="font:bold 20px;">View</a></li>
         <li><a href="Manager_Customer_Search.php">Search</a></li>
-        <li class="active"><a href="Manager_Customer_PendingOrders.php">Orders</a></li>
+        <li><a href="Manager_Customer_PendingOrders.php">Orders</a></li>
         </ul>
-      
-	   <div class="tab-content">
-					
-							<h3>Search</h3>
-							<p>Provide details to search. Search by- </p>
-							<form action="ordercustomer.php" method="post">
-								<input type="radio" id="customer_order" name="customer_order" value="1"> Name of the employee</input> </br>
-								<input type="radio" id="customer_order" name="customer_order" value="2"> ID of the Employee</input> <br/> <br/>
-								<input type="text" name="searchfor"/>
-								<button type="submit"> SUBMIT</button>
-							</form>
-					
-				</div>
-      
+<?php
+	$sql =" SELECT * FROM customer";
+	$result = $conn->query($sql);
+	echo "<br/>";
+	echo "<table class='table table-striped' class = 'table table-bordered' style='margin-left:-90px;margin-top:-10px '>";
+	echo "<thead>
+      <tr>
+         <th>Customer ID</th>
+         <th>Name</th>
+         <th>Email ID</th>
+		 <th>Contact No.</th>
+      </tr>
+   </thead>
+   <tbody>";
+	if ($result->num_rows > 0)
+	{
+
+		while($row = $result->fetch_assoc())
+		{
+			echo " <tr>
+						 <td>".$row["C_ID"]."</td>
+						 <td>".$row["Name"]."</td>
+						 <td>".$row["Email_id"]."</td>
+						 <td>".$row["Contact_No"]."</td>
+					  </tr>";
+		}
+	}
+	echo "</tbody>
+		</table>";
+?>
+		
     </div>
   </div>
 
 </body>
 </html>
+

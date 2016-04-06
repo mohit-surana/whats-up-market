@@ -8,6 +8,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
+<?php
+	$servername = "localhost";
+	$username = "root";
+	$password = '';
+	$db = "supermarket";
+	
+	$conn = new mysqli($servername, $username, $password, $db);
+	
+	if($conn->connect_error)
+		die("Connection Failed:" . $conn->connect_error);
+	
+	//echo "connected sucessfully";
+	//$conn->close();
+?>
 <body>
 	<nav class="navbar navbar-default" >
   <div class="container-fluid" style="background-color:#030303;height:100px">
@@ -28,35 +42,51 @@
       <div class="col-md-3 text-center" style="left:-75px;margin-top:-21px;background-color:#e0e0e0;z-index:100;height:100%">
         <div class="list-group" style="margin-right:-15px;margin-left:2px">
     <a href="Manager_Employee_View.php" class="list-group-item "><h4>Employee</h4></a>
-    <a href="Manager_Customer_View.php" class="list-group-item active"><h4>Customer</h4></a>
+    <a href="Manager_Customer_View.php" class="list-group-item"><h4>Customer</h4></a>
     <a href="#" class="list-group-item"><h4>Accounts</h4></a>
     <a href="#" class="list-group-item"><h4>Supply</h4></a>
-    <a href="#" class="list-group-item"><h4>Products</h4></a>
+    <a href="Manager_Product_Add.php" class="list-group-item active"><h4>Products</h4></a>
     <a href="#" class="list-group-item"><h4>Analysis</h4></a>
   </div>
       </div>
-     <div class="col-md-9 container">
-        <ul class="nav nav-tabs nav-justified" style="margin-left:-105px;margin-top:-21px">
-        <li><a href="Manager_Customer_View.php">View</a></li>
-        <li><a href="Manager_Customer_Search.php">Search</a></li>
-        <li class="active"><a href="Manager_Customer_PendingOrders.php">Orders</a></li>
+      <div class="col-md-9 container">
+        <ul class="nav nav-tabs nav-justified" style="margin-left:-105px;margin-top:-21px;">
+        <li class="active" ><a href="Manager_Product_Add.php" style="font:bold 20px;">Add an item</a></li>
+        <li><a href="Manager_Product_Delete.php">Delete an item</a></li>
+        <li><a href="Manager_Product_View.php">View</a></li>
         </ul>
-      
-	   <div class="tab-content">
-					
-							<h3>Search</h3>
-							<p>Provide details to search. Search by- </p>
-							<form action="ordercustomer.php" method="post">
-								<input type="radio" id="customer_order" name="customer_order" value="1"> Name of the employee</input> </br>
-								<input type="radio" id="customer_order" name="customer_order" value="2"> ID of the Employee</input> <br/> <br/>
-								<input type="text" name="searchfor"/>
-								<button type="submit"> SUBMIT</button>
+		<div class="tab-content">
+					<div class="row">
+						<h3>Add employee</h3>
+						Add details of product
+						
+					</div><br><br>
+					<div style="padding-left:30px">
+						<table class='table table-striped' class = 'table table-bordered' style='margin-left:-90px;margin-top:-10px'>
+							<thead>
+								<tr>
+									<th>Item ID</th>
+									<th>Item Name</th>
+									<th>Category ID</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<form action="addproduct.php" method=post>
+								<tr>
+									<th><input type='text' name='i_id'/></th>
+									<th><input type='text' name='i_name'/></th>
+									<th><input type='text' name='cat_id'/></th>
+									<th><input type='text' name='price'/></th>
+									<th><button type="submit" style="border: none; background-color: 'Transparent'; outline:none;"><img src="glyphicons-191-plus-sign.png"/></button></th>
+								</tr>
+								
 							</form>
-					
-				</div>
-      
+						</table>
+					</div>
+		
     </div>
   </div>
 
 </body>
 </html>
+
