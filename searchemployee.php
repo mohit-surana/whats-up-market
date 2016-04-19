@@ -75,7 +75,7 @@
 							if($_POST['emp_search']==2)
 							{
 								$emp_id = $_POST['searchfor'];
-								$sql =" SELECT E_ID,Name,Salary,Contact_No FROM employee where E_ID='".$emp_id."'";
+								$sql =" SELECT E_ID,Name,Salary,Contact_No,image FROM employee where E_ID='".$emp_id."'";
 								$result = $conn->query($sql);
 								
 								
@@ -83,7 +83,7 @@
 							else
 							{
 								$emp_name = $_POST['searchfor'];
-								$sql =" SELECT E_ID,Name,Salary,Contact_No FROM employee where Name LIKE '%".$emp_name."%'";
+								$sql =" SELECT E_ID,Name,Salary,Contact_No,image FROM employee where Name LIKE '%".$emp_name."%'";
 								$result = $conn->query($sql);
 								
 							}
@@ -99,6 +99,7 @@
 										<th>Name</th>
 										<th>Salary</th>
 										<th>Contact No.</th>
+										<th>Image</th>
 									</tr>
 								</thead>
 								<tbody>";
@@ -109,8 +110,9 @@
 										<td>".$row["E_ID"]."</td>
 										<td>".$row["Name"]."</td>
 										<td>".$row["Salary"]."</td>
-										<td>".$row["Contact_No"]."</td>
-									</tr>";
+										<td>".$row["Contact_No"]."</td>";
+									echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).' alt="" height="90px" width="90px"/></td>';
+									echo "</tr>";
 								}
 							}
 							else

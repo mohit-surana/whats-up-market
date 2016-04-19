@@ -64,19 +64,33 @@
 					$emp_name = $_POST['emp_name'];
 					$salary = intval($_POST['salary']);
 					$contact = intval($_POST['contact']);
-					$sql = "INSERT INTO employee VALUES ('".$emp_id."', '".$designation."', '".$emp_name."', ".$salary.", ".$contact.")";
-					$result = $conn->query($sql);
+					$image = $_FILES['image']['tmp_name'];
+            		$img = file_get_contents($image);
+
+					$sql = "INSERT INTO employee VALUES ('".$emp_id."', '".$designation."', '".$emp_name."', ".$salary.", ".$contact.",?)";
+					$stmt = mysqli_prepare($conn,$sql);
+		            mysqli_stmt_bind_param($stmt,"s",$img);
+		            mysqli_stmt_execute($stmt);
+		         
+		            $check = mysqli_stmt_affected_rows($stmt);
+		            if($check==1)
+		            {
+		                $msg = 'Successfullly Uploaded';
+		            }
+		            else
+		            {
+		                $msg = 'Could not upload';
+		            }
+
+					/*$result = $conn->query($sql);
 					if($result!="null")
-						echo "The employee details have been added.";
+						echo "The employee details have been added.";*/
 				}
 				else
 				{
 					echo "You have missed one or more fields. Please refill the details.";
 				}
-				//if(isset($emp_id))
-				//{ 
-					//echo $emp_id . "hi";
-				//}
+				
 			 ?>
 			 <br/>
 			 <br/>

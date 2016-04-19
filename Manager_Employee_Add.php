@@ -1,4 +1,4 @@
- <html>
+<html>
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,15 +76,18 @@
 									<th>Name</th>
 									<th>Salary</th>
 									<th>Contact No.</th>
+									<th>Image</th>
 								</tr>
 							</thead>
-							<form action="addemployee.php" method=post onsubmit="return validate()">
+							<form action="addemployee.php" method="post" onsubmit="return validate()" enctype="multipart/form-data">
 								<tr>
-									<th><input type='number' name='emp_id' id='emp_id'/></th>
-									<th><input type='text' name='emp_name' id='emp_name'/></th>
-									<th><input type='number' name='salary' id='salary'/></th>
-									<th><input type='number' name='contact' id='contact'/></th>
+									<th><input type='number' name='emp_id' id='emp_id'/></th>   <!-- employee id-->
+									<th><input type='text' name='emp_name' id='emp_name'/></th> <!-- employee name-->
+									<th><input type='number' name='salary' id='salary'/></th> <!-- employee salary-->
+									<th><input type='number' name='contact' id='contact'/></th> <!-- employee contact number-->
+									<th><input type='file' name='image' id='image'/></th> <!-- employee display pic-->
 									<th><button type="submit" style="border: none; background-color: 'Transparent'; outline:none;"><img src="glyphicons-191-plus-sign.png"/></button></th>
+									<!-- the submit button icon-->
 								</tr>
 								
 							</form>
