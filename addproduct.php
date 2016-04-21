@@ -7,6 +7,14 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link href="print.css" rel="stylesheet" type="text/css" media="print"> 
+	<link href="screen.css" rel="stylesheet" type="text/css" media="screen">
+	<script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="raphael.js"></script>
+	<script type="text/javascript" src="knockout.js"></script>
+	<script type="text/javascript" src="barcode.js"></script>
+
+
 </head>
 <?php
 	$servername = "localhost";
@@ -22,10 +30,10 @@
 	//echo "connected sucessfully";
 	//$conn->close();
 ?>
-<body>
+<body onload="init()">
 	<nav class="navbar navbar-default" >
 		<div class="container-fluid" style="background-color:#030303;height:100px">
-			<div class="navbar-header col-md-6 text-center">
+			<div class="navbar-header col-md-6 text-center" id="no_print">
 				<h1 style="color:white; margin-top:30px">Welcome XYZ</h1>
 			</div>
 			<ul class="nav navbar-nav " style=" margin-left:250px;padding-top:30px;color:#e0e0e0">
@@ -41,7 +49,7 @@
 	</nav>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-3 text-center" style="left:-75px;margin-top:-21px;background-color:#e0e0e0;z-index:100;height:100%">
+			<div class="col-md-3 text-center" style="left:-75px;margin-top:-21px;background-color:#e0e0e0;z-index:100;height:100%" id="no_print">
 				<div class="list-group" style="margin-right:-15px;margin-left:2px">
 					<a href="Manager_Employee_View.php" class="list-group-item"><h4>Employee</h4></a>
 					<a href="Manager_Customer_View.php" class="list-group-item"><h4>Customer</h4></a>
@@ -67,12 +75,18 @@
 					$conn->query($sql);
 					if($conn->commit())
 					{
-						echo "The employee details have been added.";
+						echo "<p id='no_print'>The item details have been added.";
+?>
+				<p id="no_print">Enter barcode text: <input data-bind="value:plaintext, valueUpdate:'afterkeydown'" id="no_print"></p>
+				<input type="button" value="Print" onclick = "window.print()" id="no_print"/>
+				<div id="canvas_container"></div>
+<?php
 					}
+					
 				}
 				else
 				{
-					echo "You have missed one or more fields. Please refill the details.";
+					echo "<p id='no_print'>You have missed one or more fields. Please refill the details.";
 				}
 				//if(isset($emp_id))
 				//{ 
@@ -81,13 +95,9 @@
 			 ?>
 			 <br/>
 			 <br/>
-			 <a href="Manager_Product_Add.php"> <img src="glyphicons-211-arrow-left.png" title='go back'/> </a>
+			 <a href="Manager_Product_Add.php" id="no_print"> <img src="glyphicons-211-arrow-left.png" title='go back'/> </a>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-			
-			
-			
-			
