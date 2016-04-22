@@ -1,5 +1,5 @@
 <?php 
-$servername = "localhost";
+  $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "supermarket";
@@ -7,23 +7,28 @@ $mid="";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) 
-{
+if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
  
+    
+require_once("dbcontroller.php");
+$db_handle = new DBController();
+
+
+
+
 $mid = $_COOKIE['id'];
 $mname= "";
 $sql = "select * from customer where C_ID ='".$mid."' ";
 $result = $conn->query($sql);
  if($result->num_rows > 0)
     {
-       while($row = $result->fetch_assoc() )
-	   {
+      
+       while($row = $result->fetch_assoc() ){
           $mname = $row['Name'];
        }
     }
-
  
 ?>
 
@@ -39,13 +44,34 @@ $result = $conn->query($sql);
 		<script src="../semantic1/semantic.min.js"></script>
         <script src="../Semantic/package.js">
 		</script>
-		<link href="style.css" type="text/css" rel="stylesheet" />
-		<link href="../css/my.css" type="text/css" rel="stylesheet" />
+		<!--<link href="style.css" type="text/css" rel="stylesheet" />!-->
+		
 		</head>
 <style>
+.ui.secondary.vertical.menu>.item {border: black;
+    margin: 5 5;
+    border-radius: .28571429rem!important;
+    border-style: black;
+    border-left-style: ridge;
+    border-bottom-style: none;
+	box-shadow:0px 1px 2px rgba(63, 50, 50, 0.75);
+    text-shadow: 0px -1px 0px rgba(30, 30, 30, 0.8);
+}
+
+.ui.menu .ui.dropdown.item .menu .item:not(.filtered) {
+    display: block;
+	 margin: 5 5;
+    border-radius: .28571429rem!important;
+    border-style: black;
+    border-left-style: ridge;
+    border-bottom-style: none;
+	box-shadow:0px 1px 2px rgba(63, 50, 50, 0.75);
+    text-shadow: 0px -1px 0px rgba(30, 30, 30, 0.8);
+}
+	
 #card{
 width:1100px;
-left:90px;
+left:200px;
 height:800px;
 }
 #ad{
@@ -63,12 +89,14 @@ top:-50px;
 border:2px;
 border-color:grey;
 border-style: solid;
+height:167px;
 }
 #ad1{
 width:280px;
 border:2px;
 border-color:grey;
 border-style: solid;
+height:167px;
 }
 #cart{
 left:-400px;
@@ -166,39 +194,37 @@ function init() {
 $('.ui.dropdown')
   .dropdown()
 ;</script>
-<body>
+<body onload="init()">
 <div class="ui inverted menu">
-  <div class="item">
+  <a class="item">
     Location:
-  </div>
-  <div class="item">
+  </a>
+  <a class="item">
     Bangalore
-  </div>
-  <div class="item ">
+  </a>
+  <a class="item ">
     <img src="ph.png">08024567543</img>
-  </div>
-  <a class="item " href="../cart/fav2.php">
-    <img src="images.png">Favourites</img></a>
+  </a>
+  <a class="item ">
+    <img src="images.png">Favourites</img>
   </a>
 <div class="right menu">
     <div class="ui simple dropdown item">
       New User? <i class="dropdown icon"></i>
       <div class="menu">
-        <a class="item">What is "what's Up market"</a>
-        <a class="item">About Us</a>
-        <a class="item">Product Quality</a>
+        <a class="item" href="WhatIsWhatsUMarket.php">What is "what's Up market"</a>
+        <a class="item" href="AboutUs1.php">About Us</a>
+        <a class="item" href="Product quality.php" >Product Quality</a>
       </div>
     </div>
 
-
 <div class="item">
- <label>Welcome &nbsp <?php echo $mname;?></label>
+       <label>Welcome &nbsp <?php echo $mname;?></label>
     </div>
 </div>
 
 <div class="item">
-        
-		 <a href="../login/login.php"><div class="ui primary button">Sign Out</div></a>
+        <a href="../login/login.php"><div class="ui primary button">Log Out</div></a>
     </div>
 </div>
 <!--<div class="four wide column"></div>
@@ -242,50 +268,127 @@ $('.ui.dropdown')
 
 </div>
 
+<div class="ui simple dropdown item" id="umenu">
+      International Products <i class="dropdown icon"></i>
+      <div class="menu">
+        <a  class="item"  >What is "what's Up market"</a>
+        <a  class="item">About Us</a>
+        <a class="item">Product Quality</a>
+      </div>
+    </div>
+<div class="ui simple dropdown item" id="umenu">
+      Health<i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item">What is "what's Up market"</a>
+        <a class="item">About Us</a>
+        <a class="item">Product Quality</a>
+      </div>
+    </div>
+
+<div class="ui simple dropdown item" id="umenu">
+      Party<i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item">What is "what's Up market"</a>
+        <a class="item">About Us</a>
+        <a class="item">Product Quality</a>
+      </div>
+    </div>
+
+<div class="ui simple dropdown item" id="umenu">
+      Fasting <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item">What is "what's Up market"</a>
+        <a class="item">About Us</a>
+        <a class="item">Product Quality</a>
+      </div>
+    </div>
+
+<div class="ui simple dropdown item" id="umenu">
+      Summer <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item">What is "what's Up market"</a>
+        <a class="item">About Us</a>
+        <a class="item">Product Quality</a>
+      </div>
+    </div>	
 	
 <div class="row">
 <div class="three wide column">
 <div class="ui secondary vertical menu" >
+  <div class="ui fitted divider"></div>
   <a class="active item" id="mmenu">
   <i class="dropdown icon"></i>
     Shops
   </a>
-  <?php
-	$sql = "select * from category ";
-	$result = $conn->query($sql);
-	if($result->num_rows > 0) 
-	{
-		while($row = $result->fetch_assoc() )
-	   {
+    <div class="ui fitted divider"></div>
+	
+  <div class="ui simple dropdown item" id="mmenu">
+    <i class="dropdown icon"></i>
+    Fruits
+    <div class="menu">
+      <div class="header">Fruits</div>
+      <a class="item" href="../Cart/products.php">Products</a>
+      <a class="item">Medium</a>
+      <a class="item">Large</a>
+    </div>
+  </div>
+   <div class="ui fitted divider"></div>
+  <div class="ui simple dropdown item"id="mmenu">
+    <i class="dropdown icon"></i>
+    Staples
+    <div class="menu">
+      <div class="header">Text Size</div>
+      <a class="item">Small</a>
+      <a class="item">Medium</a>
+      <a class="item">Large</a>
+    </div>
+  </div>
+   <div class="ui fitted divider"></div>
+  <div class="ui simple dropdown item"id="mmenu">
+    <i class="dropdown icon"></i>
+    Diary
+    <div class="menu">
+      <div class="header">Text Size</div>
+      <a class="item">Small</a>
+      <a class="item">Medium</a>
+      <a class="item">Large</a>
+    </div>
+  </div>
+   <div class="ui fitted divider"></div>
+<div class="ui simple dropdown item"id="mmenu">
+    <i class="dropdown icon"></i>
+    Meat
+    <div class="menu">
+      <div class="header">Text Size</div>
+      <a class="item">Small</a>
+      <a class="item">Medium</a>
+      <a class="item">Large</a>
+    </div>
+  </div>
+   <div class="ui fitted divider"></div>
+<div class="ui simple dropdown item"id="mmenu">
+    <i class="dropdown icon"></i>
+    Household
+	<div class="menu">
+      <div class="header">Text Size</div>
+      <a class="item">Small</a>
+      <a class="item">Medium</a>
+      <a class="item">Large</a>
+    </div>
+  </div>
+   <div class="ui fitted divider"></div>
+<div class="ui simple dropdown item"id="mmenu">
+    <i class="dropdown icon"></i>
+    Personal Care
+    <div class="menu">
+      <div class="header">Text Size</div>
+      <a class="item">Small</a>
+      <a class="item">Medium</a>
+      <a class="item">Large</a>
+    </div>
+  </div>
+  
 
-			$sql = "select * from subcategory where cat_id='".$row['Cat_ID']."'";
-			$result2 = $conn->query($sql);
-			
-			echo  "<div class='ui simple dropdown item' id='mmenu' style='height:30px;'>"; 
-			echo  "<i class='dropdown icon'></i>";	
-			
-			if($result2->num_rows <= 0) 
-				echo "<a  href='../Cart/products.php?cat_id=".$row['Cat_ID']."' class='item' style='margin-top:-12px;'>".$row['cat_name']."</a>";
-			else
-				echo "<a class='item' style='margin-top:-12px;'>".$row['cat_name']."</a>";
-			
-			echo "<div class='menu'>";
-			
-			if($result2->num_rows > 0) 
-				echo "<div class='header'>".$row['cat_name']."</div>";
-			
-			if($result2->num_rows > 0) 
-			{
-				while($row1 = $result2->fetch_assoc() )
-				{
-					  echo "<a  href='../Cart/products.php?subcat_id=".$row1['subcat_id']."'class='item' style='margin-top:-12px;' >".$row1['subcat_name']."</a>";	
-				}
-			}
-			echo "</div>";
-			echo "</div>";
-	   }
-	}
-	?>
   </div>
 
 </div>
@@ -339,7 +442,7 @@ $('.ui.dropdown')
 </div>
 </div>
 </div>
-<div class="row" style="margin-left:190px; margin-top:-100px;">
+<div class="row" style="margin-left:75px;">
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <img src="ad.png" alt="Chania" id="ad">&nbsp &nbsp &nbsp &nbsp &nbsp
   <img src="ad1.png" alt="Chania" id="ad1">&nbsp &nbsp &nbsp &nbsp &nbsp
   <img src="ad3.png" alt="Chania" id="ad2">

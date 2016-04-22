@@ -38,18 +38,16 @@ $result = $conn->query($sql);
         <script src="../Semantic/semantic.js"></script>
         <script src="../Semantic/semantic.min.js"></script>  
 		<link rel="stylesheet" type="text/css" href="../semantic1/semantic.min.css">
-		<link rel="stylesheet" type="text/css" href="../css/my.css">
 		<script src="../semantic1/semantic.min.js"></script>
-        <script src="../Semantic/package.js"></script>
-		<script src="../js/toastr.min.js"></script>
+        <script src="../Semantic/package.js">
+		</script>
 		<link href="style1.css" type="text/css" rel="stylesheet" />
-		<link href="../css/my.css" type="text/css" rel="stylesheet" />
-		<link href="../css/toastr.min.css" rel="stylesheet"/>
+		
 		</head>
 <style>
 #card{
 width:1100px;
-left:90px;
+left:100px;
 height:1500px;
 }
 
@@ -167,18 +165,24 @@ left:400px;
 	  
 	 
   }
-  function init() {
+  function init() 
+  {
      // document.getElementById("cart").innerHTML = "s";
    
-	   if (window.XMLHttpRequest) {
+	   if (window.XMLHttpRequest) 
+	   {
             // I_ID for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
-        } else {
+        } 
+		else 
+		{
             // I_ID for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        xmlhttp.onreadystatechange = function() 
+		{
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+			{
                document.getElementById("cart").innerHTML = xmlhttp.responseText;
             }
         };
@@ -187,36 +191,24 @@ left:400px;
         xmlhttp.send();
     
 }
-function up1(str) {
+function up1(str) 
+{
      // document.getElementById("cart").innerHTML = "s";
-toastr.options = {
-  "closeButton": true,
-  "debug": false,
-  "newestOnTop": false,
-  "progressBar": false,
-  "positionClass": "toast-top-full-width",
-  "preventDuplicates": true,
-  "onclick": null,
-  "showDuration": "5",
-  "hideDuration": "1000",
-  "timeOut": "1600",
-  "extendedTimeOut": "1000",
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}
-//toastr.success('Your Product has been added to cart');
-Command: toastr["success"]("<center>  Product has been added to the cart.</center>");
-	   if (window.XMLHttpRequest) {
+   
+	   if (window.XMLHttpRequest) 
+	   {
             // I_ID for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
-        } else {
+        } 
+		else 
+		{
             // I_ID for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        xmlhttp.onreadystatechange = function() 
+		{
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+			{
                document.getElementById("cart").innerHTML = xmlhttp.responseText;
             }
         };
@@ -226,28 +218,39 @@ Command: toastr["success"]("<center>  Product has been added to the cart.</cente
         xmlhttp.send();
     
 }  
+function up1(str) 
+{
+
+   
+	   if (window.XMLHttpRequest) 
+	   {
+            // I_ID for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } 
+		else 
+		{
+            // I_ID for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() 
+		{
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+			{
+               document.getElementById("cart").innerHTML = xmlhttp.responseText;
+            }
+        };
+		//v=document.getElementById("addc").value ;
+        
+		xmlhttp.open("GET","add.php?action=add&I_ID="+str+"&quantity="+v,true);
+        xmlhttp.send();
+    
+}
+
 function up2(str) 
 {
-toastr.options = {
-  "closeButton": true,
-  "debug": false,
-  "newestOnTop": false,
-  "progressBar": false,
-  "positionClass": "toast-top-full-width",
-  "preventDuplicates": true,
-  "onclick": null,
-  "showDuration": "5",
-  "hideDuration": "1000",
-  "timeOut": "1600",
-  "extendedTimeOut": "1000",
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}
-//toastr.success('Your Product has been added to cart');
-Command: toastr["success"]("<center> Added to Favourites.</center>");	   
-if (window.XMLHttpRequest) 
+       alert("Added To Favourites");
+   
+	   if (window.XMLHttpRequest) 
 	   {
             // I_ID for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
@@ -269,13 +272,13 @@ if (window.XMLHttpRequest)
   <a class="item">
     Location:
   </a>
-  <div class="item">
+  <a class="item">
     Bangalore
-  </div>
-  <div class="item ">
+  </a>
+  <a class="item ">
     <img src="ph.png">08024567543</img>
-  </div>
-  <a class="item" href="fav2.php">
+  </a>
+  <a class="item ">
     <img src="images.png">Favourites</img>
   </a>
 <div class="right menu">
@@ -283,7 +286,7 @@ if (window.XMLHttpRequest)
       New User? <i class="dropdown icon"></i>
       <div class="menu">
         <a class="item" href="../main/WhatIsWhatsUMarket.php">What is "what's Up market"</a>
-        <a class="item" href="../main/AboutUs1.php">About Us</a>
+        <a class="item" href="../main/About Us1.php">About Us</a>
         <a class="item" href="../main/Product quality.php" >Product Quality</a>
       </div>
     </div>
@@ -343,11 +346,10 @@ if (window.XMLHttpRequest)
 <div class="row">
 <div class="three wide column">
 <div class="ui secondary vertical menu" >
-<a class="active item" id="mmenu">
-  <i class="dropdown icon"></i>
-    Shops
-  </a>
-  <?php
+<br>
+
+  <div class="ui fitted divider"></div>
+   <?php
 	$sql = "select * from category ";
 	$result = $conn->query($sql);
 	if($result->num_rows > 0) 
@@ -358,13 +360,13 @@ if (window.XMLHttpRequest)
 			$sql = "select * from subcategory where cat_id='".$row['Cat_ID']."'";
 			$result2 = $conn->query($sql);
 			
-			echo  "<div class='ui simple dropdown item' id='mmenu' style='height:30px;'>"; 
+			echo  "<div class='ui simple dropdown item' id='mmenu'>"; 
 			echo  "<i class='dropdown icon'></i>";	
 			
 			if($result2->num_rows <= 0) 
-				echo "<a  href='../Cart/products.php?cat_id=".$row['Cat_ID']."' class='item' style='margin-top:-12px;'>".$row['cat_name']."</a>";
+				echo "<a  href='../Cart/products.php?cat_id=".$row['Cat_ID']."' class='item'>".$row['cat_name']."</a>";
 			else
-				echo "<a class='item' style='margin-top:-12px;'>".$row['cat_name']."</a>";
+				echo "<a class='item'>".$row['cat_name']."</a>";
 			
 			echo "<div class='menu'>";
 			
@@ -375,19 +377,19 @@ if (window.XMLHttpRequest)
 			{
 				while($row1 = $result2->fetch_assoc() )
 				{
-					  echo "<a  href='../Cart/products.php?subcat_id=".$row1['subcat_id']."'class='item' style='margin-top:-12px;' >".$row1['subcat_name']."</a>";	
+					echo "<a  href='../Cart/products.php?subcat_id=".$row1['subcat_id']."'class='item'>".$row1['subcat_name']."</a>";	
 				}
 			}
 			echo "</div>";
 			echo "</div>";
+			echo "<div class='ui fitted divider'></div>";
 	   }
 	}
 	?>
-
   </div>
 
 </div>
-<div id="myCarousel" class="carousel slide" data-ride="carousel"  style="margin-top:-55px;">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -414,68 +416,52 @@ if (window.XMLHttpRequest)
       <img src="1.png" alt="Flower">
     </div>
   </div>
-<br>
+
   <!-- Left and right controls -->
-   <div id="hb">
-<div class="ui black basic labels" id="cb">
-<a class="ui black pointing  label" id="l" data-slide-to="0" data-target="#myCarousel"><center>Offer1</center></a>
-   
-  </a>
-<a class="ui black pointing  label" id="mf" data-slide-to="1" data-target="#myCarousel"><center>Offer2</center></a>
-    
-  </a>
- <a class="ui black pointing label" id="m" data-slide-to="2" data-target="#myCarousel"><center>Offer3</center></a>
-    
-  </a>
- <a class="ui black  pointing label" id="r" data-slide-to="3" data-target="#myCarousel"><center>Offer4</center></a>
  
-  </a>
-</div>
-</div>
   
   </div><!--for carosel and row-->
-  
   </div>
-  
-  <div id="product-grid" style="width:750px; margin-left:220px;margin-top:-155px;">
+<div class="ui grid">
+<div class="three wide column">
+</div>
+<div class="thirteen wide column">
+<div id="product-grid">
 	<div class="txt-heading">Products</div>
-<div class="container" style="width:900px;margin-left:-15px;">
-
-
-
-<!--	<table>
-	<tbody>
-	<tr> -->
-
+	
 	<?php
 	$temp="";
-	$count=-1;
+	$count=0;
 	if ( isset( $_GET['cat_id'] ) && !empty( $_GET['cat_id'] ) )
 		$product_array = $db_handle->runQuery("SELECT * FROM items WHERE Cat_ID='".$_GET['cat_id']."'ORDER BY I_ID ASC");
 	else if ( isset( $_GET['subcat_id'] ) && !empty( $_GET['subcat_id'] ) )
 		$product_array = $db_handle->runQuery("SELECT * FROM items WHERE subcat_id='".$_GET['subcat_id']."'ORDER BY I_ID ASC");
+	
 	if (!empty($product_array)) { 
-		foreach($product_array as $key=>$value){ $count++;
+		foreach($product_array as $key=>$value)
+		{ 
+			if($count==12) 
+				break; 
+			else 
+				$count++;
 	?> 
-	<?php if($count%4==0): ?> 
-		<div class="row" style="height:300px;width:738px;">
-	<?php endif; ?>
-		<div class="col-md-3" >
-		<div class="product-item" style="height:271px;">
-			
-			<div class="product-image" style="margin-left:10px;"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($product_array[$key]["image"]).'" alt="photo">';?></div>
+		
+			<div class="product-item">
+			<form> 
+			<div class="product-image"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($product_array[$key]["image"]).'" alt="photo">';?></div>
 			<div><strong><?php echo $product_array[$key]["Item_Name"]; ?></strong></div>
 			<div class="product-price"><?php echo "Rs ".$product_array[$key]["Price"]; ?></div>
 			<?php $temp=$product_array[$key]["I_ID"];?>
-			<div><span style="cursor:pointer"><img src="images.png" id="fav" onclick="up2('<?php echo $temp ?>')"><small>Add to Favourites</span></small></div>
-			<div> <input type="text" Item_Name="quantity" value="1" size="2" id="addc" onchange="f(this.value)"/><input type="button" style="color:white;background-color:green;border-color:green;border-width:1px;"value="Add to cart" onclick="up1('<?php echo $temp ?>')"/></div>
+			
+			<div><img src="images.png" id="fav" onclick="up2('<?php echo $temp ?>')"><small>Add to Favourites</small></div>
+			<div> 
+			<input type="text" Item_Name="quantity" value="1" size="2" id="addc" onchange="f(this.value)"/>
+			<input type="button" style="color:white;background-color:green;border-color:green;border-width:1px;"value="Add to cart" onclick="up1('<?php echo $temp ?>')"/>
 			</div>
+			</form>
 			</div>
-	
-	<?php if(($count+1)%4==0): ?> 
-		</div>
-	<?php endif; ?>		
-	
+			
+			
 	<?php
 			}
 			

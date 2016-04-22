@@ -226,56 +226,19 @@ Command: toastr["success"]("<center>  Product has been added to the cart.</cente
         xmlhttp.send();
     
 }  
-function up2(str) 
-{
-toastr.options = {
-  "closeButton": true,
-  "debug": false,
-  "newestOnTop": false,
-  "progressBar": false,
-  "positionClass": "toast-top-full-width",
-  "preventDuplicates": true,
-  "onclick": null,
-  "showDuration": "5",
-  "hideDuration": "1000",
-  "timeOut": "1600",
-  "extendedTimeOut": "1000",
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}
-//toastr.success('Your Product has been added to cart');
-Command: toastr["success"]("<center> Added to Favourites.</center>");	   
-if (window.XMLHttpRequest) 
-	   {
-            // I_ID for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } 
-		else 
-		{
-            // I_ID for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-       
-      //  xhttp.open("POST", "fav.php", true);
-		xmlhttp.open("GET","fav.php?I_ID="+str,true);
-        xmlhttp.send();
-    
-}
 </script>
 <body onload="init()">
 <div class="ui inverted menu">
   <a class="item">
     Location:
   </a>
-  <div class="item">
+  <a class="item">
     Bangalore
-  </div>
-  <div class="item ">
+  </a>
+  <a class="item ">
     <img src="ph.png">08024567543</img>
-  </div>
-  <a class="item" href="fav2.php">
+  </a>
+  <a class="item ">
     <img src="images.png">Favourites</img>
   </a>
 <div class="right menu">
@@ -387,7 +350,7 @@ if (window.XMLHttpRequest)
   </div>
 
 </div>
-<div id="myCarousel" class="carousel slide" data-ride="carousel"  style="margin-top:-55px;">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -414,30 +377,14 @@ if (window.XMLHttpRequest)
       <img src="1.png" alt="Flower">
     </div>
   </div>
-<br>
+
   <!-- Left and right controls -->
-   <div id="hb">
-<div class="ui black basic labels" id="cb">
-<a class="ui black pointing  label" id="l" data-slide-to="0" data-target="#myCarousel"><center>Offer1</center></a>
-   
-  </a>
-<a class="ui black pointing  label" id="mf" data-slide-to="1" data-target="#myCarousel"><center>Offer2</center></a>
-    
-  </a>
- <a class="ui black pointing label" id="m" data-slide-to="2" data-target="#myCarousel"><center>Offer3</center></a>
-    
-  </a>
- <a class="ui black  pointing label" id="r" data-slide-to="3" data-target="#myCarousel"><center>Offer4</center></a>
  
-  </a>
-</div>
-</div>
   
   </div><!--for carosel and row-->
   
   </div>
-  
-  <div id="product-grid" style="width:750px; margin-left:220px;margin-top:-155px;">
+  <div id="product-grid" style="width:750px; margin-left:220px;margin-top:-100px;">
 	<div class="txt-heading">Products</div>
 <div class="container" style="width:900px;margin-left:-15px;">
 
@@ -455,7 +402,7 @@ if (window.XMLHttpRequest)
 	else if ( isset( $_GET['subcat_id'] ) && !empty( $_GET['subcat_id'] ) )
 		$product_array = $db_handle->runQuery("SELECT * FROM items WHERE subcat_id='".$_GET['subcat_id']."'ORDER BY I_ID ASC");
 	if (!empty($product_array)) { 
-		foreach($product_array as $key=>$value){ $count++;
+		foreach($product_array as $key=>$value){ if ($count==9) break; $count++;
 	?> 
 	<?php if($count%4==0): ?> 
 		<div class="row" style="height:300px;width:738px;">
@@ -467,7 +414,7 @@ if (window.XMLHttpRequest)
 			<div><strong><?php echo $product_array[$key]["Item_Name"]; ?></strong></div>
 			<div class="product-price"><?php echo "Rs ".$product_array[$key]["Price"]; ?></div>
 			<?php $temp=$product_array[$key]["I_ID"];?>
-			<div><span style="cursor:pointer"><img src="images.png" id="fav" onclick="up2('<?php echo $temp ?>')"><small>Add to Favourites</span></small></div>
+			<div><img src="images.png" id="fav" ><small>Add to Favourites</small></div>
 			<div> <input type="text" Item_Name="quantity" value="1" size="2" id="addc" onchange="f(this.value)"/><input type="button" style="color:white;background-color:green;border-color:green;border-width:1px;"value="Add to cart" onclick="up1('<?php echo $temp ?>')"/></div>
 			</div>
 			</div>

@@ -8,7 +8,7 @@
 #shopping-cart table{width:100%;background-color:#F0F0F0;}
 #shopping-cart table td{background-color:#FFFFFF;}
 .cart-item {border-bottom: #79b946 1px dotted;padding: 10px;}
-#product-grid {margin-bottom:30px;}
+#product-grid {border-top: #F08426 2px solid;margin-bottom:30px;}
 #product-grid .txt-heading{background-color: #FFD0A6;}
 .product-item {	float:left;	background:#F0F0F0;	margin:15px;	padding:5px;}
 .product-item div{text-align:center;	margin:10px;}

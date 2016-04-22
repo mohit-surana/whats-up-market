@@ -1,0 +1,22 @@
+table
+{
+	border: 1px solid black;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 20px;
+	border-spacing: 5px;
+}
+td,th
+{
+	text-align: center;
+	padding: 20px;
+}
+input
+{
+	float: right;
+	margin-right: 110px;
+	margin-top: 20px;
+	width: 100px;
+	height: 25px;	
+}

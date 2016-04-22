@@ -11,46 +11,19 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
  if(isset($_COOKIE['id'])){     //checks if this username was set (atleast once)
-	 
-      //header('location::../main/user.php');
+	  //header('location::../main/user.php');
 	  setcookie('id', 'none', time() + (86400 * 30), "/");
 	
-
-
 $mid = $_COOKIE['id'];
 $mname= "";
 $sql = "select * from customer where C_ID ='".$mid."' ";
 $result = $conn->query($sql);
  if($result->num_rows > 0)
     {
-      
-       while($row = $result->fetch_assoc() ){
+       while($row = $result->fetch_assoc() )
           $mname = $row['Name'];
-       }
     }
-
  }
- /*
- $query=mysql_query("select * from customer_login where C_ID='".$cid."' and password='".$pwd."'") or die(mysql_error()) ;
-					$res=mysql_fetch_row($query);
-					if($res)
-					{
-                    $_SESSION['id']=$id;
-                    if($id == '103')
-                      header('location::../main/user.php');
-                    else header('location:../main/user.php');
-                    $cookie_name = 'id';
-                    $cookie_value = $id;
-                    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-                     }
-                     else
-                     {
-                      echo'The entered username or password is incorrect';
-                     }
-					  background:url('background.jpg');
-             
-					 
-					 */
 ?>
 <html>
   <head>
@@ -101,53 +74,53 @@ $result = $conn->query($sql);
 		            </div>
 					<input type="hidden" name="title" value="REGISTER">
 		            <div align="center"> 
-		            <div class = "col-md-12" align="center"><input class = "btn btn-raised btn-primary" type="submit" name='submit' value="Login" onsubmit="alert(document.getElementById('id').value);"></div>
-		            </div>
-					
-					
-					
-					
-					
-					
+						<div class = "col-md-12" align="center"><input class = "btn btn-raised btn-primary" type="submit" name='submit' value="Login" onsubmit="alert(document.getElementById('id').value);"></div>
+		            </div>	
 		        </form>
 		       </div>
+			   
 			    <?php
-                 
                 session_start();
                 if(isset($_POST['submit']))
                 {
-				try{
-                mysql_connect('localhost','root','') or die(mysql_error());
-                mysql_select_db('supermarket') or die(mysql_error());
-                $id=$_POST['id'];
-                $pwd=$_POST['pwd'];
-                 $cid=0;
-                 if($id!=''&&$pwd!='')
-                 {
-					 
-					$sql = mysql_query("SELECT C_ID from customer where Email_id = '".$id."'")or die(mysql_error()) ;
-					$res1=mysql_fetch_row($sql);
-					if($res1)
-					{ 
-						while($row = $res1->fetch_array())
-							{
-								$cid=$row["C_ID"];	
-							}
-				
-					echo $cid;
-                   }
-				 }
-                   else
-                   {
-                    echo'Enter both username and password';
-                   }
-                  }
-					catch(Exception $e)
+					$id=$_POST['id'];
+					$pwd=$_POST['pwd'];
+					if($id!=''&&$pwd!='')
 					{
-						echo'Enter both username and password';
+						$sql = "SELECT C_ID from customer where Email_id = '".$id."'";
+						$result1 = $conn->query($sql);
 						
+						if($result1->num_rows > 0)				//Check if email id has been accessed 
+						{ 
+							$row = $result1->fetch_assoc();		//To Access C_ID of the email
+							$sql = "SELECT password from customer_login where C_ID = '".$row['C_ID']."'";
+							$result2 = $conn->query($sql);		// Query to access password associated with the C_ID
+							
+							//Check if password entered matches the one in the Database
+							if($result2->fetch_assoc()['password'] != $pwd)
+								echo "Password Do not Match!";
+							
+							//If password matches set the cookie and forward the request
+							else			
+							{
+								$cookie_name = 'id';
+								$cookie_value = $row['C_ID'];
+								setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+								header('location:../main/user.php');
+							}
+						} 
+						else									//If Email was not accessed Display the error msg.
+						{
+						   echo "Email-ID Entered is Not Correct!";	 
+						}
 					}
-				}
+					else										//If Email or password was not entered display the error msg.
+					{
+						echo'Enter Both Username and Password';
+					}
+					
+                }
+
 				  ?>
 
 				

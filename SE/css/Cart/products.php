@@ -187,7 +187,7 @@ left:400px;
         xmlhttp.send();
     
 }
-function up1(str) {
+function up1(str) {<?php echo "<script> alert('hi')</script>"; ?>
      // document.getElementById("cart").innerHTML = "s";
 toastr.options = {
   "closeButton": true,
